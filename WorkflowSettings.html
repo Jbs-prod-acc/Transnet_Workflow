@@ -53,7 +53,7 @@
               class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#"><i class="fas fa-cogs me-1"></i>Settings</a>
+          <a class="nav-link text-dark" href="WorkflowSettings.html"><i class="fas fa-cogs me-1"></i>Settings</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="DataRequest.html"><i class="fas fa-database me-1"></i>Data Request</a>
@@ -102,9 +102,12 @@
             </a>
             <div class="collapse ps-3" id="realTimeTasks">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html" class="nav-link">Maintenance Dispatch</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource Allocation</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver Assignments</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html"
+                    class="nav-link">Maintenance Dispatch</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource
+                    Allocation</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver
+                    Assignments</a></li>
               </ul>
             </div>
           </li>
@@ -116,8 +119,10 @@
             <div class="collapse ps-3" id="notificationChains">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="NotificationsChainSMSAlert.html" class="nav-link">SMS Alerts</a></li>
-                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a></li>
-                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email Notifications</a></li>
+                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a>
+                </li>
+                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email
+                    Notifications</a></li>
               </ul>
             </div>
           </li>
@@ -129,7 +134,8 @@
             <div class="collapse ps-3" id="workflowLogs">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="WorkflowLogsAuditTrail.html" class="nav-link">Audit Trail</a></li>
-                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a></li>
+                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -193,74 +199,92 @@
 
       <!-- Main content -->
 
-   
-      <div class="col-md-10 content">
-      <h3 class="dashboard-heading">
-        <i class="fas fa-tachograph-digital me-2 text-info"></i> MOBILITY PLATFORM | DRIVER DASHBOARD
+
+    <div class="col-md-10 content">
+
+      
+      
+      <h3 class="dashboard-heading mt-4">
+        <i class="fas fa-user-cog me-2 text-info"></i> ACCESS CONTROL | MODULE PERMISSIONS
       </h3>
       
-      <div class="card shadow-sm mt-4 mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-id-badge me-2"></i> Assigned Driver & Locomotive Overview
-          <span class="badge bg-light text-dark">Active Assignments</span>
+      <div class="card shadow-sm mt-3 mb-5">
+        <div class="card-header bg-info text-white fw-semibold fs-5">
+          <i class="fas fa-user-lock me-2"></i> Assign System Access
         </div>
       
         <div class="card-body">
-          <p class="text-muted">This panel displays currently assigned locomotives, assistants, and operational data for each driver logged into the system.</p>
-          <div class="table-responsive">
-            <table class="table table-bordered align-middle">
-              <thead class="table-light text-center">
-                <tr>
-                  <th>Driver Name</th>
-                  <th>Assigned Assistant</th>
-                  <th>Locomotive ID</th>
-                  <th>Route</th>
-                  <th>Cycle Time</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Fabchi Rajour</td>
-                  <td>Mandla G.</td>
-                  <td>LOCO-9E-112</td>
-                  <td>Koedoespoort → Durban</td>
-                  <td>6h 45m</td>
-                  <td><span class="badge bg-success">In Transit</span></td>
-                </tr>
-                <tr>
-                  <td>Samantha B.</td>
-                  <td>Samuel K.</td>
-                  <td>LOCO-15E-235</td>
-                  <td>Kimberley → Port Elizabeth</td>
-                  <td>7h 20m</td>
-                  <td><span class="badge bg-warning">Stopped</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <form id="accessAssignmentForm">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="userEmail" class="form-label fw-semibold">Email address</label>
+                <input type="email" class="form-control" id="userEmail" placeholder="Enter user's email" required>
+              </div>
       
-          <div class="alert alert-light border mt-4 mb-0 shadow-sm">
-            <i class="fas fa-info-circle me-2 text-info"></i>
-            Cycle time and status are calculated dynamically from BI SharePoint data streams. Standing time reflects route halts.
-          </div>
+              <div class="col-md-3">
+                <label for="userRole" class="form-label fw-semibold">User Role</label>
+                <select class="form-select" id="userRole" required>
+                  <option value="">Select Role</option>
+                  <option>Administrator</option>
+                  <option>Analyst</option>
+                  <option>Viewer</option>
+                </select>
+              </div>
+      
+              <div class="col-md-3">
+                <label for="status" class="form-label fw-semibold">Status</label>
+                <select class="form-select" id="status" required>
+                  <option value="">Select Status</option>
+                  <option>Active</option>
+                  <option>Inactive</option>
+                </select>
+              </div>
+            </div>
+      
+            <label class="form-label fw-semibold">Assign Module Access</label>
+            <div class="row row-cols-1 row-cols-md-3 g-2">
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="Escalation Logic" id="access1">
+                <label class="form-check-label" for="access1">Escalation Logic</label>
+              </div>
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="Real-Time Task Generation" id="access2">
+                <label class="form-check-label" for="access2">Real-Time Task Generation</label>
+              </div>
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="Notification Chains" id="access3">
+                <label class="form-check-label" for="access3">Notification Chains</label>
+              </div>
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="Workflow Logs" id="access4">
+                <label class="form-check-label" for="access4">Workflow Logs</label>
+              </div>
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="Mobility Platform" id="access5">
+                <label class="form-check-label" for="access5">Mobility Platform</label>
+              </div>
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="Project Management" id="access6">
+                <label class="form-check-label" for="access6">Project Management</label>
+              </div>
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="BI & System Dashboard" id="access7">
+                <label class="form-check-label" for="access7">BI & System Dashboard</label>
+              </div>
+            </div>
+      
+            <div class="mt-4">
+              <button type="submit" class="btn btn-primary px-4">
+                <i class="fas fa-check-circle me-1"></i> Save Permissions
+              </button>
+            </div>
+          </form>
         </div>
       </div>
       
-      <div class="card shadow-sm mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-map-marked-alt me-2"></i> Driver Activity Map
-          <span class="badge bg-light text-dark">Live Location Tracking</span>
-        </div>
-      
-        <div class="card-body">
-          <p class="text-muted mb-3">Live GPS data from assigned locomotives are tracked here. Marker colors reflect task status.</p>
-          <div id="driverDashboardMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
-        </div>
-      </div>
-      
+   
     </div>
-      
+
 
 
 
