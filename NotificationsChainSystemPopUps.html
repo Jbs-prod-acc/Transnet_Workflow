@@ -193,78 +193,52 @@
 
       <!-- Main content -->
 
-      <!-- RESOURCE ALLOCATION SECTION -->
+      <!-- Main content -->
       <div class="col-md-10 content">
         <h3 class="dashboard-heading">
-          <i class="fas fa-people-carry me-2 text-primary"></i> RESOURCE ALLOCATION DASHBOARD
+          <i class="fas fa-sliders-h me-2 text-primary"></i> WORKFLOW DASHBOARD | NOTIFICATION CHAIN | SYSTEM POP-UP
         </h3>
 
+        <!-- Pop-Up Workflow Table -->
         <div class="card shadow-sm mt-4 mb-5">
           <div
             class="card-header bg-primary text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-tasks me-2"></i> Resource Allocation Panel
-            <span class="badge bg-light text-dark">Live Staff Assignment</span>
+            <i class="fas fa-bell me-2"></i> System Pop-Up Alert Workflow
+            <span class="badge bg-light text-dark">Notification Chain Logic</span>
           </div>
 
           <div class="card-body">
-            <p class="text-muted">
-              View and allocate available personnel and equipment to corridors based on operational need, workload, and
-              availability.
-            </p>
+            <p class="text-muted">System pop-up alerts are used to notify stakeholders in real time via in-app messages
+              for immediate visibility and action.</p>
 
             <div class="table-responsive">
               <table class="table table-bordered align-middle">
                 <thead class="table-light text-center">
                   <tr>
-                    <th style="width: 25%;">Task Description</th>
-                    <th style="width: 20%;">Allocate Resource</th>
-                    <th style="width: 35%;">Notes</th>
-                    <th style="width: 20%;">Action</th>
+                    <th>Trigger Event</th>
+                    <th>Target Role</th>
+                    <th>Pop-Up Message</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Extra loading crew at Ermelo Yard</strong></td>
-                    <td>
-                      <select class="form-select">
-                        <option>Assign Standby Team A</option>
-                        <option>Shift Team B to Ermelo</option>
-                        <option>Request External Support</option>
-                      </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Urgent due to volume spike"></td>
-                    <td class="text-center">
-                      <button class="btn btn-primary btn-sm"><i class="fas fa-user-plus me-1"></i> Assign</button>
-                    </td>
+                    <td><strong>Missed Check-In</strong></td>
+                    <td>Security Command Center</td>
+                    <td>“⛔ Officer Jabulani failed to check in at Zone 3B by 12:00.”</td>
+                    <td class="text-center"><span class="badge bg-danger">Critical</span></td>
                   </tr>
-
                   <tr>
-                    <td><strong>Shortage of forklift operators in Durban</strong></td>
-                    <td>
-                      <select class="form-select">
-                        <option>Reallocate from Richards Bay</option>
-                        <option>Bring in Reserves</option>
-                      </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Night shift required"></td>
-                    <td class="text-center">
-                      <button class="btn btn-outline-primary btn-sm"><i class="fas fa-exchange-alt me-1"></i>
-                        Transfer</button>
-                    </td>
+                    <td><strong>Unauthorized Halt</strong></td>
+                    <td>Ops Supervisor</td>
+                    <td>“🚧 Train NB702 stopped near Pienaarspoort. Immediate verification required.”</td>
+                    <td class="text-center"><span class="badge bg-warning">High</span></td>
                   </tr>
-
                   <tr>
-                    <td><strong>Supervisor needed for night dispatch</strong></td>
-                    <td>
-                      <select class="form-select">
-                        <option>Assign Senior Supervisor</option>
-                        <option>Rotate On-Duty Manager</option>
-                      </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Dispatch Point 2 - Port Elizabeth"></td>
-                    <td class="text-center">
-                      <button class="btn btn-dark btn-sm"><i class="fas fa-clipboard-check me-1"></i> Allocate</button>
-                    </td>
+                    <td><strong>Fuel Alert</strong></td>
+                    <td>Fuel & Logistics</td>
+                    <td>“⛽ Excessive fuel burn detected in Sector F.”</td>
+                    <td class="text-center"><span class="badge bg-info">Normal</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -272,107 +246,88 @@
 
             <div class="alert alert-light border mt-4 mb-0 shadow-sm">
               <i class="fas fa-info-circle me-2 text-primary"></i>
-              Resource allocation updates are logged to workflow and synced with BI dashboards for performance tracking.
+              All pop-up alerts are stored in the audit log system and can be referenced from the workflow status panel.
             </div>
           </div>
         </div>
 
+        <!-- Dispatch Panel -->
         <div class="card shadow-sm mb-4">
           <div
             class="card-header bg-primary text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-map-marked-alt me-2"></i> Resource Deployment Map
-            <span class="badge bg-light text-dark">Personnel & Equipment View</span>
+            <i class="fas fa-exclamation-circle me-2"></i> In-App Pop-Up Dispatch Panel
+            <span class="badge bg-light text-dark">Escalation & Action</span>
           </div>
 
           <div class="card-body">
-            <p class="text-muted mb-3">Click on any marker to view available personnel or asset details and perform
-              reallocation.</p>
-            <div id="resourceMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;">
-            </div>
+            <p class="text-muted">Trigger or escalate real-time pop-up notifications to key personnel. Messages can be
+              customized and routed manually or automatically.</p>
+
+            <table class="table table-bordered align-middle">
+              <thead class="table-light text-center">
+                <tr>
+                  <th>Trigger</th>
+                  <th>Recipient</th>
+                  <th>Severity</th>
+                  <th>Message</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Zone Patrol Missed</strong></td>
+                  <td>
+                    <select class="form-select">
+                      <option>Zone Supervisor</option>
+                      <option>Security Manager</option>
+                    </select>
+                  </td>
+                  <td><span class="badge bg-danger">Critical</span></td>
+                  <td><input type="text" class="form-control" value="⛔ Missed patrol in Zone A at 14:00" /></td>
+                  <td class="text-center">
+                    <button class="btn btn-primary btn-sm"><i class="fas fa-bullhorn me-1"></i> Send</button>
+                    <button class="btn btn-dark btn-sm mt-2"><i class="fas fa-arrow-up"></i> Escalate</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Delay Alert</strong></td>
+                  <td>
+                    <select class="form-select">
+                      <option>Dispatcher</option>
+                      <option>Yard Manager</option>
+                    </select>
+                  </td>
+                  <td><span class="badge bg-warning">High</span></td>
+                  <td><input type="text" class="form-control" value="⚠️ Delay at Iron Ore Terminal - 60+ mins late" />
+                  </td>
+                  <td class="text-center">
+                    <button class="btn btn-primary btn-sm"><i class="fas fa-bullhorn me-1"></i> Send</button>
+                    <button class="btn btn-secondary btn-sm mt-2"><i class="fas fa-check-circle"></i> Resolve</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
+        <!-- Map Section -->
         <div class="card shadow-sm mb-4">
           <div
             class="card-header bg-primary text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-project-diagram me-2"></i> Resource Allocation Workflow Steps
-            <span class="badge bg-light text-dark">Assignment Protocol</span>
+            <i class="fas fa-map-marked-alt me-2"></i> Pop-Up Alert Locations
+            <span class="badge bg-light text-dark">South Africa | Alert Heatmap</span>
           </div>
 
           <div class="card-body">
-            <p class="text-muted mb-4">Outlined below is the step-by-step resource allocation logic:</p>
-
-            <div class="row g-4">
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-primary shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-primary"><i class="fas fa-database me-1"></i> Demand Detection</h6>
-                    <p class="mb-0 text-muted">System flags under-resourced corridors or operational overload based on
-                      live task inflow.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-info shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-info"><i class="fas fa-user-check me-1"></i> Resource Matching</h6>
-                    <p class="mb-0 text-muted">Available staff/equipment are filtered based on skill, location, and
-                      shift availability.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-success shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-success"><i class="fas fa-random me-1"></i> Smart Reallocation</h6>
-                    <p class="mb-0 text-muted">System suggests optimal reassignments or alerts administrator if manual
-                      action is required.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-warning shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-warning"><i class="fas fa-truck-moving me-1"></i> Reassignment Execution
-                    </h6>
-                    <p class="mb-0 text-muted">Affected teams are notified and GPS tracking is updated to reflect new
-                      deployments.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-secondary shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-secondary"><i class="fas fa-clipboard-list me-1"></i> Workflow Logging</h6>
-                    <p class="mb-0 text-muted">Every reallocation event is time-stamped and recorded for audit and
-                      training reference.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-dark shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-dark"><i class="fas fa-chart-area me-1"></i> Performance Feedback</h6>
-                    <p class="mb-0 text-muted">Post-task evaluations are used to enhance future staff deployment
-                      decisions.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="alert alert-light border mt-4 mb-0 shadow-sm">
-              <i class="fas fa-info-circle me-2 text-primary"></i>
-              This allocation engine boosts operational efficiency, prevents corridor overload, and promotes smart
-              manpower planning.
+            <p class="text-muted mb-3">Below is a real-time visual of where incidents triggering pop-ups have occurred
+              across the network.</p>
+            <div id="popupIncidentMap" style="height: 550px; width: 100%; border: 1px solid #ccc; border-radius: 10px;">
             </div>
           </div>
         </div>
       </div>
+
+
 
 
 
@@ -437,7 +392,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  const resourceMap = L.map('resourceMap', {
+  const popupIncidentMap = L.map('popupIncidentMap', {
     center: [-28.4793, 24.6727],
     zoom: 6,
     minZoom: 6,
@@ -445,40 +400,43 @@
     maxBounds: L.latLngBounds(L.latLng(-35.0, 16.0), L.latLng(-22.0, 33.0)),
     maxBoundsViscosity: 1.0
   });
-  
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     noWrap: true
-  }).addTo(resourceMap);
-  
-  const staffAllocations = [
-    { name: "Ermelo Yard", coords: [-26.5333, 29.9833], issue: "Crew Required", color: "primary" },
-    { name: "Durban Terminal", coords: [-29.8587, 31.0218], issue: "Operator Shortage", color: "warning" },
-    { name: "Port Elizabeth", coords: [-33.9608, 25.6022], issue: "Supervisor Needed", color: "info" }
+  }).addTo(popupIncidentMap);
+
+  const popupIncidents = [
+    { name: "Zone 3B", coords: [-29.8606, 31.0218], severity: "danger", message: "Missed security check-in" },
+    { name: "Pienaarspoort", coords: [-25.7174, 28.4274], severity: "warning", message: "Unauthorized train halt" },
+    { name: "Sector F", coords: [-26.1446, 27.9992], severity: "info", message: "High fuel consumption" }
   ];
-  
-  staffAllocations.forEach(loc => {
+
+  popupIncidents.forEach(loc => {
     const icon = L.divIcon({
       className: 'custom-ribbon-icon',
-      html: `<i class="fas fa-user-cog fa-2x text-${loc.color}"></i>`,
+      html: `<i class="fas fa-bell fa-2x text-${loc.severity}"></i>`,
       iconSize: [24, 36],
       iconAnchor: [12, 36]
     });
-  
-    const marker = L.marker(loc.coords, { icon }).addTo(resourceMap);
+
+    const marker = L.marker(loc.coords, { icon }).addTo(popupIncidentMap);
     marker.bindPopup(`
       <div>
         <strong>${loc.name}</strong><br/>
-        <span class="text-muted">${loc.issue}</span><br/>
-        <span class="badge bg-${loc.color}">${loc.color.toUpperCase()}</span><br/>
-        <button class="btn btn-sm btn-outline-primary mt-2" onclick="alert('Reassignment triggered to ${loc.name}')">
-          Reassign Resource
+        <span class="text-muted">${loc.message}</span><br/>
+        <span class="badge bg-${loc.severity}">${loc.severity.toUpperCase()}</span><br/>
+        <button class="btn btn-sm btn-outline-primary mt-2" onclick="alert('Pop-up triggered from ${loc.name}')">
+          View Alert
         </button>
       </div>
     `);
   });
-  </script>
-  
+</script>
+
+
+
+
 
 
 
