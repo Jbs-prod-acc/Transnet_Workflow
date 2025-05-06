@@ -102,9 +102,12 @@
             </a>
             <div class="collapse ps-3" id="realTimeTasks">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html" class="nav-link">Maintenance Dispatch</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource Allocation</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver Assignments</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html"
+                    class="nav-link">Maintenance Dispatch</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource
+                    Allocation</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver
+                    Assignments</a></li>
               </ul>
             </div>
           </li>
@@ -116,8 +119,10 @@
             <div class="collapse ps-3" id="notificationChains">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="NotificationsChainSMSAlert.html" class="nav-link">SMS Alerts</a></li>
-                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a></li>
-                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email Notifications</a></li>
+                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a>
+                </li>
+                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email
+                    Notifications</a></li>
               </ul>
             </div>
           </li>
@@ -129,7 +134,8 @@
             <div class="collapse ps-3" id="workflowLogs">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="WorkflowLogsAuditTrail.html" class="nav-link">Audit Trail</a></li>
-                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a></li>
+                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -140,9 +146,12 @@
             </a>
             <div class="collapse ps-3" id="mobilityPlatform">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="#" class="nav-link">Driver Dashboard</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Maintenance Call-Out</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Security Officer Check-In</a></li>
+                <li class="nav-item"><a href="MobilityPlatformDriverDashboard.html" class="nav-link">Driver
+                    Dashboard</a></li>
+                <li class="nav-item"><a href="MobilityPlatformDriverMaintenanceCallout.html"
+                    class="nav-link">Maintenance Call-Out</a></li>
+                <li class="nav-item"><a href="MobilityPlatformSecurityOfficerCheckin.html" class="nav-link">Security
+                    Officer Check-In</a></li>
               </ul>
             </div>
           </li>
@@ -193,74 +202,76 @@
 
       <!-- Main content -->
 
-   
+
       <div class="col-md-10 content">
-      <h3 class="dashboard-heading">
-        <i class="fas fa-tachograph-digital me-2 text-info"></i> MOBILITY PLATFORM | DRIVER DASHBOARD
-      </h3>
-      
-      <div class="card shadow-sm mt-4 mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-id-badge me-2"></i> Assigned Driver & Locomotive Overview
-          <span class="badge bg-light text-dark">Active Assignments</span>
-        </div>
-      
-        <div class="card-body">
-          <p class="text-muted">This panel displays currently assigned locomotives, assistants, and operational data for each driver logged into the system.</p>
-          <div class="table-responsive">
-            <table class="table table-bordered align-middle">
-              <thead class="table-light text-center">
-                <tr>
-                  <th>Driver Name</th>
-                  <th>Assigned Assistant</th>
-                  <th>Locomotive ID</th>
-                  <th>Route</th>
-                  <th>Cycle Time</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Fabchi Rajour</td>
-                  <td>Mandla G.</td>
-                  <td>LOCO-9E-112</td>
-                  <td>Koedoespoort → Durban</td>
-                  <td>6h 45m</td>
-                  <td><span class="badge bg-success">In Transit</span></td>
-                </tr>
-                <tr>
-                  <td>Samantha B.</td>
-                  <td>Samuel K.</td>
-                  <td>LOCO-15E-235</td>
-                  <td>Kimberley → Port Elizabeth</td>
-                  <td>7h 20m</td>
-                  <td><span class="badge bg-warning">Stopped</span></td>
-                </tr>
-              </tbody>
-            </table>
+        <h3 class="dashboard-heading">
+          <i class="fas fa-user-shield me-2 text-success"></i> MOBILITY PLATFORM | SECURITY OFFICER CHECK-IN
+        </h3>
+
+        <div class="card shadow-sm mt-4 mb-5">
+          <div
+            class="card-header bg-success text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-clipboard-check me-2"></i> Officer Location Check-In Form
+            <span class="badge bg-light text-dark">Live Duty Reporting</span>
           </div>
-      
-          <div class="alert alert-light border mt-4 mb-0 shadow-sm">
-            <i class="fas fa-info-circle me-2 text-info"></i>
-            Cycle time and status are calculated dynamically from BI SharePoint data streams. Standing time reflects route halts.
+
+          <div class="card-body">
+            <p class="text-muted">Security officers use this interface to register duty check-ins per shift. Time and
+              geolocation are logged for accountability and monitoring.</p>
+
+              <form id="checkInForm" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="officerName" class="form-label">Officer Name</label>
+                  <input type="text" class="form-control" id="officerName" placeholder="e.g., John Mokoena" required>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="checkpoint" class="form-label">Checkpoint</label>
+                  <select class="form-select" id="checkpoint" required>
+                    <option disabled selected>Select checkpoint</option>
+                    <option>Zone Alpha – Gate 1</option>
+                    <option>Zone Bravo – Storage</option>
+                    <option>Zone Charlie – Yard Exit</option>
+                  </select>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="timestamp" class="form-label">Check-In Time</label>
+                  <input type="datetime-local" class="form-control" id="timestamp" required>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="officerImage" class="form-label">Upload Image</label>
+                  <input class="form-control" type="file" id="officerImage" accept="image/*" required>
+                  <div class="form-text">Upload an environment photo as proof of check-in.</div>
+                </div>
+              
+                <button type="submit" class="btn btn-success">
+                  <i class="fas fa-check-circle me-1"></i> Submit Check-In
+                </button>
+              </form>
+              
+          </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+          <div
+            class="card-header bg-success text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-map-marker-alt me-2"></i> Security Check-In Map
+            <span class="badge bg-light text-dark">Duty Location Logs</span>
+          </div>
+
+          <div class="card-body">
+            <p class="text-muted mb-3">Recent officer check-ins are shown below. Click a marker for checkpoint and
+              officer details.</p>
+            <div id="securityCheckInMap"
+              style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
           </div>
         </div>
       </div>
-      
-      <div class="card shadow-sm mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-map-marked-alt me-2"></i> Driver Activity Map
-          <span class="badge bg-light text-dark">Live Location Tracking</span>
-        </div>
-      
-        <div class="card-body">
-          <p class="text-muted mb-3">Live GPS data from assigned locomotives are tracked here. Marker colors reflect task status.</p>
-          <div id="driverDashboardMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
-        </div>
-      </div>
-      
-    </div>
-      
+
+
+
 
 
 
@@ -327,8 +338,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  const driverDashboardMap = L.map('driverDashboardMap', {
-    center: [-28.4, 24.7],
+  // Security Check-In Map
+  const securityMap = L.map('securityCheckInMap', {
+    center: [-28.5, 24.7],
     zoom: 6,
     minZoom: 6,
     maxZoom: 12,
@@ -339,49 +351,53 @@
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     noWrap: true
-  }).addTo(driverDashboardMap);
+  }).addTo(securityMap);
 
-  const driverPositions = [
+  const securityCheckIns = [
     {
-      name: "Driver Fabchi",
-      coords: [-25.7209, 28.2225],
-      assistant: "Mandla G.",
-      loco: "LOCO-9E-112",
-      status: "In Transit",
-      color: "success"
+      name: "Fabchi RJ",
+      checkpoint: "Zone Alpha – Gate 1",
+      coords: [-26.2041, 28.0473],
+      time: "2025-05-06 06:00",
+      badge: "success"
     },
     {
-      name: "Driver Samantha B.",
-      coords: [-28.7383, 24.7634],
-      assistant: "Samuel K.",
-      loco: "LOCO-15E-235",
-      status: "Stopped",
-      color: "warning"
+      name: "Kabelo Christian",
+      checkpoint: "Zone Bravo – Storage",
+      coords: [-29.8587, 31.0218],
+      time: "2025-05-06 08:10",
+      badge: "info"
     }
   ];
 
-  driverPositions.forEach(driver => {
+  securityCheckIns.forEach(entry => {
     const icon = L.divIcon({
       className: 'custom-ribbon-icon',
-      html: `<i class="fas fa-train fa-2x text-${driver.color}"></i>`,
+      html: `<i class="fas fa-user-shield fa-2x text-${entry.badge}"></i>`,
       iconSize: [24, 36],
       iconAnchor: [12, 36]
     });
 
-    const marker = L.marker(driver.coords, { icon }).addTo(driverDashboardMap);
+    const marker = L.marker(entry.coords, { icon }).addTo(securityMap);
     marker.bindPopup(`
       <div>
-        <strong>${driver.name}</strong><br/>
-        Assistant: ${driver.assistant}<br/>
-        Locomotive: ${driver.loco}<br/>
-        <span class="badge bg-${driver.color}">${driver.status}</span><br/>
-        <button class="btn btn-sm btn-outline-primary mt-2" onclick="alert('Viewing full route for ${driver.name}')">
-          View Route
-        </button>
+        <strong>${entry.name}</strong><br/>
+        Checkpoint: ${entry.checkpoint}<br/>
+        <span class="small text-muted">${entry.time}</span><br/>
+        <span class="badge bg-${entry.badge}">Checked In</span>
       </div>
     `);
   });
+
+  // Form handler (mock logic)
+  document.getElementById('checkInForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('✅ Security officer successfully checked in and logged to BI system.');
+    this.reset();
+  });
 </script>
+
+
 
 
 

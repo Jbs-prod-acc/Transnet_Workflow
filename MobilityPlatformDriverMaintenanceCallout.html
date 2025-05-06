@@ -102,9 +102,12 @@
             </a>
             <div class="collapse ps-3" id="realTimeTasks">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html" class="nav-link">Maintenance Dispatch</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource Allocation</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver Assignments</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html"
+                    class="nav-link">Maintenance Dispatch</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource
+                    Allocation</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver
+                    Assignments</a></li>
               </ul>
             </div>
           </li>
@@ -116,8 +119,10 @@
             <div class="collapse ps-3" id="notificationChains">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="NotificationsChainSMSAlert.html" class="nav-link">SMS Alerts</a></li>
-                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a></li>
-                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email Notifications</a></li>
+                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a>
+                </li>
+                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email
+                    Notifications</a></li>
               </ul>
             </div>
           </li>
@@ -129,7 +134,8 @@
             <div class="collapse ps-3" id="workflowLogs">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="WorkflowLogsAuditTrail.html" class="nav-link">Audit Trail</a></li>
-                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a></li>
+                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -140,9 +146,10 @@
             </a>
             <div class="collapse ps-3" id="mobilityPlatform">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="#" class="nav-link">Driver Dashboard</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Maintenance Call-Out</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Security Officer Check-In</a></li>
+                <li class="nav-item"><a href="MobilityPlatformDriverDashboard.html" class="nav-link">Driver
+                    Dashboard</a></li>
+                <li class="nav-item"><a href="MobilityPlatformDriverMaintenanceCallout.html" class="nav-link">Maintenance Call-Out</a></li>
+                <li class="nav-item"><a href="MobilityPlatformSecurityOfficerCheckin.html" class="nav-link">Security Officer Check-In</a></li>
               </ul>
             </div>
           </li>
@@ -193,74 +200,63 @@
 
       <!-- Main content -->
 
-   
+
       <div class="col-md-10 content">
-      <h3 class="dashboard-heading">
-        <i class="fas fa-tachograph-digital me-2 text-info"></i> MOBILITY PLATFORM | DRIVER DASHBOARD
-      </h3>
+        <h3 class="dashboard-heading">
+          <i class="fas fa-tools me-2 text-danger"></i> MOBILITY PLATFORM | MAINTENANCE CALL-OUT
+        </h3>
       
-      <div class="card shadow-sm mt-4 mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-id-badge me-2"></i> Assigned Driver & Locomotive Overview
-          <span class="badge bg-light text-dark">Active Assignments</span>
-        </div>
-      
-        <div class="card-body">
-          <p class="text-muted">This panel displays currently assigned locomotives, assistants, and operational data for each driver logged into the system.</p>
-          <div class="table-responsive">
-            <table class="table table-bordered align-middle">
-              <thead class="table-light text-center">
-                <tr>
-                  <th>Driver Name</th>
-                  <th>Assigned Assistant</th>
-                  <th>Locomotive ID</th>
-                  <th>Route</th>
-                  <th>Cycle Time</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Fabchi Rajour</td>
-                  <td>Mandla G.</td>
-                  <td>LOCO-9E-112</td>
-                  <td>Koedoespoort → Durban</td>
-                  <td>6h 45m</td>
-                  <td><span class="badge bg-success">In Transit</span></td>
-                </tr>
-                <tr>
-                  <td>Samantha B.</td>
-                  <td>Samuel K.</td>
-                  <td>LOCO-15E-235</td>
-                  <td>Kimberley → Port Elizabeth</td>
-                  <td>7h 20m</td>
-                  <td><span class="badge bg-warning">Stopped</span></td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="card shadow-sm mt-4 mb-5">
+          <div class="card-header bg-danger text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-wrench me-2"></i> Submit Maintenance Call-Out
+            <span class="badge bg-light text-dark">Driver Reported Faults</span>
           </div>
       
-          <div class="alert alert-light border mt-4 mb-0 shadow-sm">
-            <i class="fas fa-info-circle me-2 text-info"></i>
-            Cycle time and status are calculated dynamically from BI SharePoint data streams. Standing time reflects route halts.
+          <div class="card-body">
+            <p class="text-muted">Drivers can report mechanical issues directly via this form. Submissions trigger immediate technician alerts and are stored in BI SharePoint for real-time diagnostics.</p>
+      
+            <form id="maintenanceForm">
+              <div class="mb-3">
+                <label for="location" class="form-label">Location of Call-Out</label>
+                <input type="text" class="form-control" id="location" placeholder="e.g., Koedoespoort Yard">
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description / Reason</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Describe the issue..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="calloutTime" class="form-label">Time of Call-Out</label>
+                <input type="datetime-local" class="form-control" id="calloutTime">
+              </div>
+              <div class="mb-3">
+                <label for="locomotive" class="form-label">Locomotive Name</label>
+                <select class="form-select" id="locomotive">
+                  <option selected disabled>Select Locomotive</option>
+                  <option>LOCO-9E-112</option>
+                  <option>LOCO-15E-235</option>
+                  <option>LOCO-19E-083</option>
+                </select>
+              </div>
+      
+              <button type="submit" class="btn btn-danger"><i class="fas fa-paper-plane me-1"></i> Submit Call-Out</button>
+            </form>
+          </div>
+        </div>
+      
+        <div class="card shadow-sm mb-4">
+          <div class="card-header bg-danger text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-map-marker-alt me-2"></i> Maintenance Call-Outs Map
+            <span class="badge bg-light text-dark">Live Fault Locations</span>
+          </div>
+      
+          <div class="card-body">
+            <p class="text-muted mb-3">This map displays all recent maintenance call-outs from the field. Click on a marker to view reported issue details.</p>
+            <div id="maintenanceMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
           </div>
         </div>
       </div>
       
-      <div class="card shadow-sm mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-map-marked-alt me-2"></i> Driver Activity Map
-          <span class="badge bg-light text-dark">Live Location Tracking</span>
-        </div>
-      
-        <div class="card-body">
-          <p class="text-muted mb-3">Live GPS data from assigned locomotives are tracked here. Marker colors reflect task status.</p>
-          <div id="driverDashboardMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
-        </div>
-      </div>
-      
-    </div>
-      
+
 
 
 
@@ -327,7 +323,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  const driverDashboardMap = L.map('driverDashboardMap', {
+  // Maintenance Map Initialization
+  const maintenanceMap = L.map('maintenanceMap', {
     center: [-28.4, 24.7],
     zoom: 6,
     minZoom: 6,
@@ -339,49 +336,55 @@
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     noWrap: true
-  }).addTo(driverDashboardMap);
+  }).addTo(maintenanceMap);
 
-  const driverPositions = [
+  // Sample Maintenance Entries
+  const maintenanceEntries = [
     {
-      name: "Driver Fabchi",
+      location: "Koedoespoort Yard",
       coords: [-25.7209, 28.2225],
-      assistant: "Mandla G.",
+      issue: "Air brake failure",
       loco: "LOCO-9E-112",
-      status: "In Transit",
-      color: "success"
+      time: "2025-05-06 08:15",
+      color: "danger"
     },
     {
-      name: "Driver Samantha B.",
+      location: "Kimberley Terminal",
       coords: [-28.7383, 24.7634],
-      assistant: "Samuel K.",
+      issue: "Wheel misalignment",
       loco: "LOCO-15E-235",
-      status: "Stopped",
+      time: "2025-05-06 09:30",
       color: "warning"
     }
   ];
 
-  driverPositions.forEach(driver => {
+  maintenanceEntries.forEach(entry => {
     const icon = L.divIcon({
       className: 'custom-ribbon-icon',
-      html: `<i class="fas fa-train fa-2x text-${driver.color}"></i>`,
+      html: `<i class="fas fa-tools fa-2x text-${entry.color}"></i>`,
       iconSize: [24, 36],
       iconAnchor: [12, 36]
     });
 
-    const marker = L.marker(driver.coords, { icon }).addTo(driverDashboardMap);
+    const marker = L.marker(entry.coords, { icon }).addTo(maintenanceMap);
     marker.bindPopup(`
       <div>
-        <strong>${driver.name}</strong><br/>
-        Assistant: ${driver.assistant}<br/>
-        Locomotive: ${driver.loco}<br/>
-        <span class="badge bg-${driver.color}">${driver.status}</span><br/>
-        <button class="btn btn-sm btn-outline-primary mt-2" onclick="alert('Viewing full route for ${driver.name}')">
-          View Route
-        </button>
+        <strong>${entry.location}</strong><br/>
+        <span class="text-muted">${entry.issue}</span><br/>
+        <span class="badge bg-${entry.color}">${entry.loco}</span><br/>
+        <span class="small text-muted">${entry.time}</span>
       </div>
     `);
   });
+
+  // Dummy form submission handler
+  document.getElementById('maintenanceForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert("✅ Maintenance Call-Out submitted and synced to BI SharePoint.");
+    this.reset();
+  });
 </script>
+
 
 
 
