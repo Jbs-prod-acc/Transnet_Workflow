@@ -30,6 +30,10 @@
     .custom-ribbon-icon i {
       text-shadow: 0 0 2px #fff;
     }
+
+    .card-header.bg-info {
+      background-color: var(--transnet-red) !important;
+    }
   </style>
 </head>
 
@@ -37,7 +41,7 @@
 
   <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
+      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 80px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
     </a>
 
@@ -50,7 +54,7 @@
       <ul class="navbar-nav align-items-center">
         <li class="nav-item">
           <a class="nav-link text-dark fw-semibold" href="index.html"><i
-              class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
+              class="fas fa-chart-line me-1"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="WorkflowSettings.html"><i class="fas fa-cogs me-1"></i>Settings</a>
@@ -200,90 +204,90 @@
       <!-- Main content -->
 
 
-    <div class="col-md-10 content">
+      <div class="col-md-10 content">
 
-      
-      
-      <h3 class="dashboard-heading mt-4">
-        <i class="fas fa-user-cog me-2 text-info"></i> ACCESS CONTROL | MODULE PERMISSIONS
-      </h3>
-      
-      <div class="card shadow-sm mt-3 mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5">
-          <i class="fas fa-user-lock me-2"></i> Assign System Access
+
+
+        <h3 class="dashboard-heading mt-4">
+          <i class="fas fa-user-cog me-2 text-info"></i> ACCESS CONTROL | MODULE PERMISSIONS
+        </h3>
+
+        <div class="card shadow-sm mt-3 mb-5">
+          <div class="card-header bg-info text-white fw-semibold fs-5">
+            <i class="fas fa-user-lock me-2"></i> Assign System Access
+          </div>
+
+          <div class="card-body">
+            <form id="accessAssignmentForm">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="userEmail" class="form-label fw-semibold">Email address</label>
+                  <input type="email" class="form-control" id="userEmail" placeholder="Enter user's email" required>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="userRole" class="form-label fw-semibold">User Role</label>
+                  <select class="form-select" id="userRole" required>
+                    <option value="">Select Role</option>
+                    <option>Administrator</option>
+                    <option>Analyst</option>
+                    <option>Viewer</option>
+                  </select>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="status" class="form-label fw-semibold">Status</label>
+                  <select class="form-select" id="status" required>
+                    <option value="">Select Status</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                  </select>
+                </div>
+              </div>
+
+              <label class="form-label fw-semibold">Assign Module Access</label>
+              <div class="row row-cols-1 row-cols-md-3 g-2">
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="Escalation Logic" id="access1">
+                  <label class="form-check-label" for="access1">Escalation Logic</label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="Real-Time Task Generation" id="access2">
+                  <label class="form-check-label" for="access2">Real-Time Task Generation</label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="Notification Chains" id="access3">
+                  <label class="form-check-label" for="access3">Notification Chains</label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="Workflow Logs" id="access4">
+                  <label class="form-check-label" for="access4">Workflow Logs</label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="Mobility Platform" id="access5">
+                  <label class="form-check-label" for="access5">Mobility Platform</label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="Project Management" id="access6">
+                  <label class="form-check-label" for="access6">Project Management</label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="BI & System Dashboard" id="access7">
+                  <label class="form-check-label" for="access7">BI & System Dashboard</label>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <button type="submit" class="btn btn-primary px-4">
+                  <i class="fas fa-check-circle me-1"></i> Save Permissions
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      
-        <div class="card-body">
-          <form id="accessAssignmentForm">
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="userEmail" class="form-label fw-semibold">Email address</label>
-                <input type="email" class="form-control" id="userEmail" placeholder="Enter user's email" required>
-              </div>
-      
-              <div class="col-md-3">
-                <label for="userRole" class="form-label fw-semibold">User Role</label>
-                <select class="form-select" id="userRole" required>
-                  <option value="">Select Role</option>
-                  <option>Administrator</option>
-                  <option>Analyst</option>
-                  <option>Viewer</option>
-                </select>
-              </div>
-      
-              <div class="col-md-3">
-                <label for="status" class="form-label fw-semibold">Status</label>
-                <select class="form-select" id="status" required>
-                  <option value="">Select Status</option>
-                  <option>Active</option>
-                  <option>Inactive</option>
-                </select>
-              </div>
-            </div>
-      
-            <label class="form-label fw-semibold">Assign Module Access</label>
-            <div class="row row-cols-1 row-cols-md-3 g-2">
-              <div class="form-check col">
-                <input class="form-check-input" type="checkbox" value="Escalation Logic" id="access1">
-                <label class="form-check-label" for="access1">Escalation Logic</label>
-              </div>
-              <div class="form-check col">
-                <input class="form-check-input" type="checkbox" value="Real-Time Task Generation" id="access2">
-                <label class="form-check-label" for="access2">Real-Time Task Generation</label>
-              </div>
-              <div class="form-check col">
-                <input class="form-check-input" type="checkbox" value="Notification Chains" id="access3">
-                <label class="form-check-label" for="access3">Notification Chains</label>
-              </div>
-              <div class="form-check col">
-                <input class="form-check-input" type="checkbox" value="Workflow Logs" id="access4">
-                <label class="form-check-label" for="access4">Workflow Logs</label>
-              </div>
-              <div class="form-check col">
-                <input class="form-check-input" type="checkbox" value="Mobility Platform" id="access5">
-                <label class="form-check-label" for="access5">Mobility Platform</label>
-              </div>
-              <div class="form-check col">
-                <input class="form-check-input" type="checkbox" value="Project Management" id="access6">
-                <label class="form-check-label" for="access6">Project Management</label>
-              </div>
-              <div class="form-check col">
-                <input class="form-check-input" type="checkbox" value="BI & System Dashboard" id="access7">
-                <label class="form-check-label" for="access7">BI & System Dashboard</label>
-              </div>
-            </div>
-      
-            <div class="mt-4">
-              <button type="submit" class="btn btn-primary px-4">
-                <i class="fas fa-check-circle me-1"></i> Save Permissions
-              </button>
-            </div>
-          </form>
-        </div>
+
+
       </div>
-      
-   
-    </div>
 
 
 

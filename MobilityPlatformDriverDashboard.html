@@ -30,6 +30,10 @@
     .custom-ribbon-icon i {
       text-shadow: 0 0 2px #fff;
     }
+
+    .card-header.bg-info {
+      background-color: var(--transnet-red) !important;
+    }
   </style>
 </head>
 
@@ -37,7 +41,7 @@
 
   <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
+      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 80px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
     </a>
 
@@ -50,7 +54,7 @@
       <ul class="navbar-nav align-items-center">
         <li class="nav-item">
           <a class="nav-link text-dark fw-semibold" href="index.html"><i
-              class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
+              class="fas fa-chart-line me-1"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="WorkflowSettings.html"><i class="fas fa-cogs me-1"></i>Settings</a>
@@ -102,9 +106,12 @@
             </a>
             <div class="collapse ps-3" id="realTimeTasks">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html" class="nav-link">Maintenance Dispatch</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource Allocation</a></li>
-                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver Assignments</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html"
+                    class="nav-link">Maintenance Dispatch</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource
+                    Allocation</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver
+                    Assignments</a></li>
               </ul>
             </div>
           </li>
@@ -116,8 +123,10 @@
             <div class="collapse ps-3" id="notificationChains">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="NotificationsChainSMSAlert.html" class="nav-link">SMS Alerts</a></li>
-                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a></li>
-                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email Notifications</a></li>
+                <li class="nav-item"><a href="NotificationsChainSystemPopUps.html" class="nav-link">System Pop-ups</a>
+                </li>
+                <li class="nav-item"><a href="NotificationsChainEmailNotifications.html" class="nav-link">Email
+                    Notifications</a></li>
               </ul>
             </div>
           </li>
@@ -129,7 +138,8 @@
             <div class="collapse ps-3" id="workflowLogs">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="WorkflowLogsAuditTrail.html" class="nav-link">Audit Trail</a></li>
-                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a></li>
+                <li class="nav-item"><a href="WorkflowLogsTaskStatusLogs.html" class="nav-link">Task Status Logs</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -140,9 +150,12 @@
             </a>
             <div class="collapse ps-3" id="mobilityPlatform">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="MobilityPlatformDriverDashboard.html" class="nav-link">Driver Dashboard</a></li>
-                <li class="nav-item"><a href="MobilityPlatformDriverMaintenanceCallout.html" class="nav-link">Maintenance Call-Out</a></li>
-                <li class="nav-item"><a href="MobilityPlatformSecurityOfficerCheckin.html" class="nav-link">Security Officer Check-In</a></li>
+                <li class="nav-item"><a href="MobilityPlatformDriverDashboard.html" class="nav-link">Driver
+                    Dashboard</a></li>
+                <li class="nav-item"><a href="MobilityPlatformDriverMaintenanceCallout.html"
+                    class="nav-link">Maintenance Call-Out</a></li>
+                <li class="nav-item"><a href="MobilityPlatformSecurityOfficerCheckin.html" class="nav-link">Security
+                    Officer Check-In</a></li>
               </ul>
             </div>
           </li>
@@ -154,8 +167,10 @@
             <div class="collapse ps-3" id="projectMgmt">
               <ul class="nav flex-column">
                 <li class="nav-item"><a href="ProjectManagementGrantChat.html" class="nav-link">Gantt Charts</a></li>
-                <li class="nav-item"><a href="ProjectManagementContractorTracker.html" class="nav-link">Contractor Tracker</a></li>
-                <li class="nav-item"><a href="ProjectManagementBudgetMilestone.html" class="nav-link">Budget & Milestones</a></li>
+                <li class="nav-item"><a href="ProjectManagementContractorTracker.html" class="nav-link">Contractor
+                    Tracker</a></li>
+                <li class="nav-item"><a href="ProjectManagementBudgetMilestone.html" class="nav-link">Budget &
+                    Milestones</a></li>
               </ul>
             </div>
           </li>
@@ -166,9 +181,12 @@
             </a>
             <div class="collapse ps-3" id="systemDashboard">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="BIandSystemDAshboardHeatMaps.html" class="nav-link">Heatmaps & Alerts</a></li>
-                <li class="nav-item"><a href="BIandSystemDAshboardDelayandRiskAnalytics.html" class="nav-link">Delay & Risk Analytics</a></li>
-                <li class="nav-item"><a href="BIandSystemDAshboardCrossBUInsights.html" class="nav-link">Cross-BU Insights</a></li>
+                <li class="nav-item"><a href="BIandSystemDAshboardHeatMaps.html" class="nav-link">Heatmaps & Alerts</a>
+                </li>
+                <li class="nav-item"><a href="BIandSystemDAshboardDelayandRiskAnalytics.html" class="nav-link">Delay &
+                    Risk Analytics</a></li>
+                <li class="nav-item"><a href="BIandSystemDAshboardCrossBUInsights.html" class="nav-link">Cross-BU
+                    Insights</a></li>
               </ul>
             </div>
           </li>
@@ -193,74 +211,81 @@
 
       <!-- Main content -->
 
-   
+
       <div class="col-md-10 content">
-      <h3 class="dashboard-heading">
-        <i class="fas fa-tachograph-digital me-2 text-info"></i> WORKFLOW DASHBOARD | MOBILITY PLATFORM | DRIVER DASHBOARD
-      </h3>
-      
-      <div class="card shadow-sm mt-4 mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-id-badge me-2"></i> Assigned Driver & Locomotive Overview
-          <span class="badge bg-light text-dark">Active Assignments</span>
-        </div>
-      
-        <div class="card-body">
-          <p class="text-muted">This panel displays currently assigned locomotives, assistants, and operational data for each driver logged into the system.</p>
-          <div class="table-responsive">
-            <table class="table table-bordered align-middle">
-              <thead class="table-light text-center">
-                <tr>
-                  <th>Driver Name</th>
-                  <th>Assigned Assistant</th>
-                  <th>Locomotive ID</th>
-                  <th>Route</th>
-                  <th>Cycle Time</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Fabchi Rajour</td>
-                  <td>Mandla G.</td>
-                  <td>LOCO-9E-112</td>
-                  <td>Koedoespoort → Durban</td>
-                  <td>6h 45m</td>
-                  <td><span class="badge bg-success">In Transit</span></td>
-                </tr>
-                <tr>
-                  <td>Samantha B.</td>
-                  <td>Samuel K.</td>
-                  <td>LOCO-15E-235</td>
-                  <td>Kimberley → Port Elizabeth</td>
-                  <td>7h 20m</td>
-                  <td><span class="badge bg-warning">Stopped</span></td>
-                </tr>
-              </tbody>
-            </table>
+        <h3 class="dashboard-heading">
+          <i class="fas fa-tachograph-digital me-2 text-info"></i> WORKFLOW DASHBOARD | MOBILITY PLATFORM | DRIVER
+          DASHBOARD
+        </h3>
+
+        <div class="card shadow-sm mt-4 mb-5">
+          <div
+            class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-id-badge me-2"></i> Assigned Driver & Locomotive Overview
+            <span class="badge bg-light text-dark">Active Assignments</span>
           </div>
-      
-          <div class="alert alert-light border mt-4 mb-0 shadow-sm">
-            <i class="fas fa-info-circle me-2 text-info"></i>
-            Cycle time and status are calculated dynamically from BI SharePoint data streams. Standing time reflects route halts.
+
+          <div class="card-body">
+            <p class="text-muted">This panel displays currently assigned locomotives, assistants, and operational data
+              for each driver logged into the system.</p>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light text-center">
+                  <tr>
+                    <th>Driver Name</th>
+                    <th>Assigned Assistant</th>
+                    <th>Locomotive ID</th>
+                    <th>Route</th>
+                    <th>Cycle Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Fabchi Rajour</td>
+                    <td>Mandla G.</td>
+                    <td>LOCO-9E-112</td>
+                    <td>Koedoespoort → Durban</td>
+                    <td>6h 45m</td>
+                    <td><span class="badge bg-success">In Transit</span></td>
+                  </tr>
+                  <tr>
+                    <td>Samantha B.</td>
+                    <td>Samuel K.</td>
+                    <td>LOCO-15E-235</td>
+                    <td>Kimberley → Port Elizabeth</td>
+                    <td>7h 20m</td>
+                    <td><span class="badge bg-warning">Stopped</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="alert alert-light border mt-4 mb-0 shadow-sm">
+              <i class="fas fa-info-circle me-2 text-info"></i>
+              Cycle time and status are calculated dynamically from BI SharePoint data streams. Standing time reflects
+              route halts.
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="card shadow-sm mb-5">
-        <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-          <i class="fas fa-map-marked-alt me-2"></i> Driver Activity Map
-          <span class="badge bg-light text-dark">Live Location Tracking</span>
+
+        <div class="card shadow-sm mb-5">
+          <div
+            class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-map-marked-alt me-2"></i> Driver Activity Map
+            <span class="badge bg-light text-dark">Live Location Tracking</span>
+          </div>
+
+          <div class="card-body">
+            <p class="text-muted mb-3">Live GPS data from assigned locomotives are tracked here. Marker colors reflect
+              task status.</p>
+            <div id="driverDashboardMap"
+              style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
+          </div>
         </div>
-      
-        <div class="card-body">
-          <p class="text-muted mb-3">Live GPS data from assigned locomotives are tracked here. Marker colors reflect task status.</p>
-          <div id="driverDashboardMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
-        </div>
+
       </div>
-      
-    </div>
-      
+
 
 
 
