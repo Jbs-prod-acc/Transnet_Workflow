@@ -102,9 +102,9 @@
             </a>
             <div class="collapse ps-3" id="realTimeTasks">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="#" class="nav-link">Maintenance Dispatch</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Resource Allocation</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Driver Assignments</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationMaintenanceDispatch.html" class="nav-link">Maintenance Dispatch</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationResourceAlocation.html" class="nav-link">Resource Allocation</a></li>
+                <li class="nav-item"><a href="RealTimeTaskGenerationDriverAssignment.html" class="nav-link">Driver Assignments</a></li>
               </ul>
             </div>
           </li>
@@ -214,7 +214,8 @@
                 <thead class="table-light text-center">
                   <tr>
                     <th style="width: 25%;">Trip Requirement</th>
-                    <th style="width: 20%;">Select Driver</th>
+                    <th style="width: 20%;">Select Main Driver</th>
+                    <th style="width: 20%;">Select Assistant Driver</th>
                     <th style="width: 35%;">Notes</th>
                     <th style="width: 20%;">Action</th>
                   </tr>
@@ -224,10 +225,19 @@
                     <td><strong>Night haul to Upington</strong></td>
                     <td>
                       <select class="form-select">
-                        <option>Driver Musa</option>
-                        <option>Driver Thabo</option>
+                        <option>Driver Fabchi</option>
+                        <option>Driver Samuel</option>
                       </select>
                     </td>
+
+                    <td>
+                      <select class="form-select">
+                        <option>Driver Fabchi</option>
+                        <option>Driver Samuel</option>
+                      </select>
+                    </td>
+
+
                     <td><input type="text" class="form-control" placeholder="Preferred for long haul night runs"></td>
                     <td class="text-center">
                       <button class="btn btn-success btn-sm"><i class="fas fa-check-circle me-1"></i> Assign</button>
@@ -238,8 +248,15 @@
                     <td><strong>New driver orientation for Gauteng route</strong></td>
                     <td>
                       <select class="form-select">
-                        <option>Driver Lebo</option>
-                        <option>Driver Sizwe</option>
+                        <option>Driver Christian</option>
+                        <option>Driver Nkadimeng</option>
+                      </select>
+                    </td>
+
+                    <td>
+                      <select class="form-select">
+                        <option>Driver Christian</option>
+                        <option>Driver Nkadimeng</option>
                       </select>
                     </td>
                     <td><input type="text" class="form-control" placeholder="Trainer must be experienced"></td>
@@ -252,8 +269,15 @@
                     <td><strong>Relief driver for Port operations</strong></td>
                     <td>
                       <select class="form-select">
-                        <option>Driver Zanele</option>
-                        <option>Driver Themba</option>
+                        <option>Driver Noluthando</option>
+                        <option>Driver Paris</option>
+                      </select>
+                    </td>
+
+                    <td>
+                      <select class="form-select">
+                        <option>Driver Christian</option>
+                        <option>Driver Nkadimeng</option>
                       </select>
                     </td>
                     <td><input type="text" class="form-control" placeholder="8hr shift relief rotation"></td>
