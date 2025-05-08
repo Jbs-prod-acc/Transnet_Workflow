@@ -36,10 +36,10 @@
 <body>
 
   <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <!-- <a class="navbar-brand d-flex align-items-center" href="#">
       <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 80px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
-    </a>
+    </a> -->
 
     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopMenu"
       aria-controls="navbarTopMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,12 +77,15 @@
     <div class="row">
       <!-- Sidebar -->
       <div class="col-12 col-md-2 sidebar p-3">
-        <h5 class="text-white">Transnet Freight Rail</h5>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./IMAGES/download-removebg-preview.png" alt="Transnet Logo" style="height: 80px; margin-right: 15px;">
+          <span class="fw-bold fs-5" style="line-height: 1.2; color: #8cc63f;">Freight Rail</span>
+        </a>
 
         <ul class="nav flex-column mt-3">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#escalationLogic" role="button">
-              Escalation Logic <i class="fas fa-chevron-down float-end"></i>
+              <i class="fas fa-exclamation-triangle me-2"></i>Escalation Logic <i class="fas fa-chevron-down float-end"></i>
             </a>
             <div class="collapse ps-3" id="escalationLogic">
               <ul class="nav flex-column">
@@ -98,7 +101,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#realTimeTasks" role="button">
-              Real-Time Task Generation <i class="fas fa-chevron-down float-end"></i>
+              <i class="fas fa-bolt me-2"></i>Real-Time Task Generation <i class="fas fa-chevron-down float-end"></i>
             </a>
             <div class="collapse ps-3" id="realTimeTasks">
               <ul class="nav flex-column">
@@ -114,7 +117,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#notificationChains" role="button">
-              Notification Chains <i class="fas fa-chevron-down float-end"></i>
+              <i class="fas fa-bell me-2"></i>Notification Chains <i class="fas fa-chevron-down float-end"></i>
             </a>
             <div class="collapse ps-3" id="notificationChains">
               <ul class="nav flex-column">
@@ -129,7 +132,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#workflowLogs" role="button">
-              Workflow Logs <i class="fas fa-chevron-down float-end"></i>
+              <i class="fas fa-clipboard-list me-2"></i>Workflow Logs <i class="fas fa-chevron-down float-end"></i>
             </a>
             <div class="collapse ps-3" id="workflowLogs">
               <ul class="nav flex-column">
@@ -142,7 +145,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#mobilityPlatform" role="button">
-              Mobility Platform <i class="fas fa-chevron-down float-end"></i>
+              <i class="fas fa-mobile-alt me-2"></i>Mobility Platform <i class="fas fa-chevron-down float-end"></i>
             </a>
             <div class="collapse ps-3" id="mobilityPlatform">
               <ul class="nav flex-column">
@@ -158,7 +161,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#projectMgmt" role="button">
-              Project Management <i class="fas fa-chevron-down float-end"></i>
+              <i class="fas fa-project-diagram me-2"></i>Project Management <i class="fas fa-chevron-down float-end"></i>
             </a>
             <div class="collapse ps-3" id="projectMgmt">
               <ul class="nav flex-column">
@@ -173,7 +176,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#systemDashboard" role="button">
-              BI & System Dashboard <i class="fas fa-chevron-down float-end"></i>
+              <i class="fas fa-chart-area me-2"></i>BI & System Dashboard <i class="fas fa-chevron-down float-end"></i>
             </a>
             <div class="collapse ps-3" id="systemDashboard">
               <ul class="nav flex-column">
@@ -321,12 +324,14 @@
       datasets: [
         {
           label: 'Avg. Delivery Time (hrs)',
-          backgroundColor: 'rgba(54, 162, 235, 0.7)',
+          // backgroundColor: 'rgba(54, 162, 235, 0.7)',
+          backgroundColor: '#a10d00',
           data: [5.6, 4.2, 6.8, 5.0, 6.3, 4.8]
         },
         {
           label: 'Operational Cost (R million)',
-          backgroundColor: 'rgba(255, 99, 132, 0.7)',
+          // backgroundColor: 'rgba(255, 99, 132, 0.7)',
+          backgroundColor: '#d9ddde',
           data: [8.2, 6.5, 9.0, 7.3, 8.0, 6.9]
         }
       ]
