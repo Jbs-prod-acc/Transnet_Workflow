@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="/static/CSS/style.css">
 
   <style>
     body {
@@ -35,22 +35,30 @@
 
 <body>
 
-  <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
+ <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
+      <img src="/static/IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
     </a>
+  
+   <!-- Sidebar Toggle Button for small screens -->
+    <button class="btn btn-outline-dark d-md-none ms-auto" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle sidebar">
+      <i class="fas fa-bars"></i> Menu
+    </button>
 
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopMenu"
+    <!-- Top Navbar Links (visible on md and up) -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopMenu"
       aria-controls="navbarTopMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
+  
     <div class="collapse navbar-collapse justify-content-end" id="navbarTopMenu">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item">
-          <a class="nav-link text-dark fw-semibold" href="index.html"><i
-              class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
+          <a class="nav-link text-dark fw-semibold" href="index.html"><i class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="WorkflowSettings.html"><i class="fas fa-cogs me-1"></i>Settings</a>
@@ -58,7 +66,7 @@
         <li class="nav-item">
           <a class="nav-link text-dark" href="DataRequest.html"><i class="fas fa-database me-1"></i>Data Request</a>
         </li>
-
+        
         <li class="nav-item">
           <a class="nav-link text-dark" href="#"><i class="fas fa-user-circle me-1"></i>Profile</a>
         </li>
@@ -76,9 +84,9 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
-      <div class="col-12 col-md-2 sidebar p-3">
-        <h5 class="text-white">Transnet Freight Rail</h5>
-
+         <div class="collapse d-md-block col-12 col-md-2 sidebar p-3" id="mobileSidebar">
+        <h5>Transnet Freight Rail</h5>
+      
         <ul class="nav flex-column mt-3">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#escalationLogic" role="button">
@@ -86,16 +94,13 @@
             </a>
             <div class="collapse ps-3" id="escalationLogic">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="EscalationLogicIncidentTrigger.html" class="nav-link">Incident
-                    Triggers</a></li>
-                <li class="nav-item"><a href="EscalationLogicUnsafeZoneAlert.html" class="nav-link">Unsafe Zone
-                    Alerts</a></li>
-                <li class="nav-item"><a href="EscalationLogicDelayThresholdLogic.html" class="nav-link">Delay Threshold
-                    Logic</a></li>
+                <li class="nav-item"><a href="EscalationLogicIncidentTrigger.html" class="nav-link">Incident Triggers</a></li>
+                <li class="nav-item"><a href="EscalationLogicUnsafeZoneAlert.html" class="nav-link">Unsafe Zone Alerts</a></li>
+                <li class="nav-item"><a href="EscalationLogicDelayThresholdLogic.html" class="nav-link">Delay Threshold Logic</a></li>
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#realTimeTasks" role="button">
               Real-Time Task Generation <i class="fas fa-chevron-down float-end"></i>
@@ -108,7 +113,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#notificationChains" role="button">
               Notification Chains <i class="fas fa-chevron-down float-end"></i>
@@ -121,7 +126,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#workflowLogs" role="button">
               Workflow Logs <i class="fas fa-chevron-down float-end"></i>
@@ -133,7 +138,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#mobilityPlatform" role="button">
               Mobility Platform <i class="fas fa-chevron-down float-end"></i>
@@ -146,7 +151,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#projectMgmt" role="button">
               Project Management <i class="fas fa-chevron-down float-end"></i>
@@ -159,7 +164,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#systemDashboard" role="button">
               BI & System Dashboard <i class="fas fa-chevron-down float-end"></i>
@@ -173,101 +178,73 @@
             </div>
           </li>
         </ul>
-
-
-        <div class="mt-4">
-          <label>Yard Type:</label>
-          <select class="form-select">
-            <option>Bulk</option>
-          </select>
-        </div>
-
-        <div class="mt-3">
-          <label>Area Filter:</label>
-          <select class="form-select">
-            <option>Departure Yard</option>
-          </select>
-        </div>
+        
+      
+      
+      
+      
       </div>
 
 
       <!-- Main content -->
+
+
       <div class="col-md-10 content">
         <h3 class="dashboard-heading">
-          <i class="fas fa-tasks me-2 text-primary"></i> WORKFLOW DASHBOARD | WORKFLOW LOGS | TASK STATUS LOGS
+          <i class="fas fa-tools me-2 text-danger"></i> WORKFLOW DASHBOARD | MOBILITY PLATFORM | MAINTENANCE CALL-OUT
         </h3>
       
         <div class="card shadow-sm mt-4 mb-5">
-          <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-clipboard-check me-2"></i> Task Status Overview
-            <span class="badge bg-light text-dark">Real-Time Workflow Progress</span>
+          <div class="card-header text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-wrench me-2"></i> Submit Maintenance Call-Out
+            <span class="badge bg-light text-dark">Driver Reported Faults</span>
           </div>
       
           <div class="card-body">
-            <p class="text-muted">This table provides a real-time snapshot of all open, in-progress, and completed tasks across departments, updated dynamically from the Mobility App and Enterprise Workflow Engine.</p>
+            <p class="text-muted">Drivers can report mechanical issues directly via this form. Submissions trigger immediate technician alerts and are stored in BI SharePoint for real-time diagnostics.</p>
       
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped align-middle">
-                <thead class="table-light text-center">
-                  <tr>
-                    <th>Task ID</th>
-                    <th>Description</th>
-                    <th>Assigned To</th>
-                    <th>Department</th>
-                    <th>Status</th>
-                    <th>Last Update</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>#TR-4021</td>
-                    <td>Emergency call-out for brake failure</td>
-                    <td>Tech Fabchi</td>
-                    <td>Maintenance</td>
-                    <td><span class="badge bg-danger">Urgent</span></td>
-                    <td>2025-05-06 10:12</td>
-                  </tr>
-                  <tr>
-                    <td>#TR-3956</td>
-                    <td>Check-in compliance validation</td>
-                    <td>Security05</td>
-                    <td>Security</td>
-                    <td><span class="badge bg-warning">Pending</span></td>
-                    <td>2025-05-05 08:30</td>
-                  </tr>
-                  <tr>
-                    <td>#TR-3889</td>
-                    <td>Driver shift reallocation</td>
-                    <td>Admin01</td>
-                    <td>Operations</td>
-                    <td><span class="badge bg-success">Completed</span></td>
-                    <td>2025-05-04 16:02</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <form id="maintenanceForm">
+              <div class="mb-3">
+                <label for="location" class="form-label">Location of Call-Out</label>
+                <input type="text" class="form-control" id="location" placeholder="e.g., Koedoespoort Yard">
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description / Reason</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Describe the issue..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="calloutTime" class="form-label">Time of Call-Out</label>
+                <input type="datetime-local" class="form-control" id="calloutTime">
+              </div>
+              <div class="mb-3">
+                <label for="locomotive" class="form-label">Locomotive Name</label>
+                <select class="form-select" id="locomotive">
+                  <option selected disabled>Select Locomotive</option>
+                  <option>LOCO-9E-112</option>
+                  <option>LOCO-15E-235</option>
+                  <option>LOCO-19E-083</option>
+                </select>
+              </div>
       
-            <div class="alert alert-light border mt-4 mb-0 shadow-sm">
-              <i class="fas fa-info-circle me-2 text-primary"></i>
-              All statuses are synced from the core system and reflect workflow escalations, acknowledgments, and completion timelines.
-            </div>
+              <button type="submit" class="btn btn-danger"><i class="fas fa-paper-plane me-1"></i> Submit Call-Out</button>
+            </form>
           </div>
         </div>
       
-        <div class="card shadow-sm mt-4 mb-4">
-          <div class="card-header bg-info text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-map-marked-alt me-2"></i> Task Execution Map
-            <span class="badge bg-light text-dark">Live Task Locations</span>
+        <div class="card shadow-sm mb-4">
+           <div class="card-header text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-map-marker-alt me-2"></i> Maintenance Call-Outs Map
+            <span class="badge bg-light text-dark">Live Fault Locations</span>
           </div>
       
           <div class="card-body">
-            <p class="text-muted mb-3">This map displays live execution points for maintenance, operations, and safety tasks. Click on a marker for task details.</p>
-            <div id="taskStatusMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
+            <p class="text-muted mb-3">This map displays all recent maintenance call-outs from the field. Click on a marker to view reported issue details.</p>
+            <div id="maintenanceMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
           </div>
         </div>
       </div>
       
-      
+
 
 
 
@@ -301,40 +278,13 @@
 </body>
 
 
-<footer class="bg-dark text-white text-center text-md-start mt-5">
-  <div class="container p-4">
-    <div class="row">
-      <!-- Left column -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Transnet Freight Rail</h5>
-        <p>
-          This dashboard is designed to optimize rail freight operations, ensure efficiency, and track performance
-          across multiple operational areas.
-        </p>
-      </div>
 
-      <!-- Right column -->
-      <div class="col-md-6 mb-4 mb-md-0 text-md-end">
-        <h5 class="text-uppercase">Contact & Support</h5>
-        <ul class="list-unstyled">
-          <li>Email: <a href="mailto:support@transnetfreight.co.za" class="text-white">support@transnetfreight.co.za</a>
-          </li>
-          <li>Phone: +27 11 123 4567</li>
-          <li>Operating Hours: Mon–Fri, 08:00–17:00</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center p-3 bg-secondary">
-    &copy; 2025 Transnet Freight Rail. All rights reserved.
-  </div>
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  const taskStatusMap = L.map('taskStatusMap', {
+  // Maintenance Map Initialization
+  const maintenanceMap = L.map('maintenanceMap', {
     center: [-28.4, 24.7],
     zoom: 6,
     minZoom: 6,
@@ -346,54 +296,55 @@
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     noWrap: true
-  }).addTo(taskStatusMap);
+  }).addTo(maintenanceMap);
 
-  const taskMarkers = [
+  // Sample Maintenance Entries
+  const maintenanceEntries = [
     {
-      name: "Koedoespoort Maintenance Site",
+      location: "Koedoespoort Yard",
       coords: [-25.7209, 28.2225],
-      role: "Technician",
-      task: "Emergency brake repair",
-      status: "Urgent",
-      badge: "danger"
+      issue: "Air brake failure",
+      loco: "LOCO-9E-112",
+      time: "2025-05-06 08:15",
+      color: "danger"
     },
     {
-      name: "Zone Alpha Security Checkpoint",
-      coords: [-26.2041, 28.0473],
-      role: "Security",
-      task: "Check-in validation",
-      status: "Pending",
-      badge: "warning"
-    },
-    {
-      name: "Operations Hub Gauteng",
-      coords: [-26.1395, 27.9949],
-      role: "Admin",
-      task: "Driver shift update",
-      status: "Completed",
-      badge: "success"
+      location: "Kimberley Terminal",
+      coords: [-28.7383, 24.7634],
+      issue: "Wheel misalignment",
+      loco: "LOCO-15E-235",
+      time: "2025-05-06 09:30",
+      color: "warning"
     }
   ];
 
-  taskMarkers.forEach(entry => {
+  maintenanceEntries.forEach(entry => {
     const icon = L.divIcon({
       className: 'custom-ribbon-icon',
-      html: `<i class="fas fa-tasks fa-2x text-${entry.badge}"></i>`,
+      html: `<i class="fas fa-tools fa-2x text-${entry.color}"></i>`,
       iconSize: [24, 36],
       iconAnchor: [12, 36]
     });
 
-    const marker = L.marker(entry.coords, { icon }).addTo(taskStatusMap);
+    const marker = L.marker(entry.coords, { icon }).addTo(maintenanceMap);
     marker.bindPopup(`
       <div>
-        <strong>${entry.name}</strong><br/>
-        <span class="text-muted">${entry.task}</span><br/>
-        <span class="badge bg-${entry.badge}">${entry.status}</span><br/>
-        <span class="small text-muted">Role: ${entry.role}</span>
+        <strong>${entry.location}</strong><br/>
+        <span class="text-muted">${entry.issue}</span><br/>
+        <span class="badge bg-${entry.color}">${entry.loco}</span><br/>
+        <span class="small text-muted">${entry.time}</span>
       </div>
     `);
   });
+
+  // Dummy form submission handler
+  document.getElementById('maintenanceForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert("✅ Maintenance Call-Out submitted and synced to BI SharePoint.");
+    this.reset();
+  });
 </script>
+
 
 
 

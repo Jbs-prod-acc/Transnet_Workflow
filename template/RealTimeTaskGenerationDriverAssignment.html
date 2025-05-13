@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="/static/CSS/style.css">
 
   <style>
     body {
@@ -35,22 +35,30 @@
 
 <body>
 
-  <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
+ <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
+      <img src="/static/IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
     </a>
+  
+   <!-- Sidebar Toggle Button for small screens -->
+    <button class="btn btn-outline-dark d-md-none ms-auto" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle sidebar">
+      <i class="fas fa-bars"></i> Menu
+    </button>
 
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopMenu"
+    <!-- Top Navbar Links (visible on md and up) -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopMenu"
       aria-controls="navbarTopMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
+  
     <div class="collapse navbar-collapse justify-content-end" id="navbarTopMenu">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item">
-          <a class="nav-link text-dark fw-semibold" href="index.html"><i
-              class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
+          <a class="nav-link text-dark fw-semibold" href="index.html"><i class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="WorkflowSettings.html"><i class="fas fa-cogs me-1"></i>Settings</a>
@@ -58,7 +66,7 @@
         <li class="nav-item">
           <a class="nav-link text-dark" href="DataRequest.html"><i class="fas fa-database me-1"></i>Data Request</a>
         </li>
-
+        
         <li class="nav-item">
           <a class="nav-link text-dark" href="#"><i class="fas fa-user-circle me-1"></i>Profile</a>
         </li>
@@ -76,9 +84,9 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
-      <div class="col-12 col-md-2 sidebar p-3">
-        <h5 class="text-white">Transnet Freight Rail</h5>
-
+        <div class="collapse d-md-block col-12 col-md-2 sidebar p-3" id="mobileSidebar">
+        <h5>Transnet Freight Rail</h5>
+      
         <ul class="nav flex-column mt-3">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#escalationLogic" role="button">
@@ -86,16 +94,13 @@
             </a>
             <div class="collapse ps-3" id="escalationLogic">
               <ul class="nav flex-column">
-                <li class="nav-item"><a href="EscalationLogicIncidentTrigger.html" class="nav-link">Incident
-                    Triggers</a></li>
-                <li class="nav-item"><a href="EscalationLogicUnsafeZoneAlert.html" class="nav-link">Unsafe Zone
-                    Alerts</a></li>
-                <li class="nav-item"><a href="EscalationLogicDelayThresholdLogic.html" class="nav-link">Delay Threshold
-                    Logic</a></li>
+                <li class="nav-item"><a href="EscalationLogicIncidentTrigger.html" class="nav-link">Incident Triggers</a></li>
+                <li class="nav-item"><a href="EscalationLogicUnsafeZoneAlert.html" class="nav-link">Unsafe Zone Alerts</a></li>
+                <li class="nav-item"><a href="EscalationLogicDelayThresholdLogic.html" class="nav-link">Delay Threshold Logic</a></li>
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#realTimeTasks" role="button">
               Real-Time Task Generation <i class="fas fa-chevron-down float-end"></i>
@@ -108,7 +113,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#notificationChains" role="button">
               Notification Chains <i class="fas fa-chevron-down float-end"></i>
@@ -121,7 +126,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#workflowLogs" role="button">
               Workflow Logs <i class="fas fa-chevron-down float-end"></i>
@@ -133,7 +138,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#mobilityPlatform" role="button">
               Mobility Platform <i class="fas fa-chevron-down float-end"></i>
@@ -146,7 +151,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#projectMgmt" role="button">
               Project Management <i class="fas fa-chevron-down float-end"></i>
@@ -159,7 +164,7 @@
               </ul>
             </div>
           </li>
-
+        
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#systemDashboard" role="button">
               BI & System Dashboard <i class="fas fa-chevron-down float-end"></i>
@@ -173,206 +178,204 @@
             </div>
           </li>
         </ul>
-
-
-        <div class="mt-4">
-          <label>Yard Type:</label>
-          <select class="form-select">
-            <option>Bulk</option>
-          </select>
-        </div>
-
-        <div class="mt-3">
-          <label>Area Filter:</label>
-          <select class="form-select">
-            <option>Departure Yard</option>
-          </select>
-        </div>
+        
+      
+      
+      
+      
       </div>
 
 
       <!-- Main content -->
 
-      <!-- RESOURCE ALLOCATION SECTION -->
       <div class="col-md-10 content">
         <h3 class="dashboard-heading">
-          <i class="fas fa-people-carry me-2 text-primary"></i> WORKFLOW DASHBOARD | REAL-TIME TASK GENERATION | RESOURCE ALLOCATION DASHBOARD
+          <i class="fas fa-id-badge me-2 text-success"></i> WORKFLOW DASHBOARD | REAL-TIME TASK GENERATION | DRIVER ASSIGNMENT DASHBOARD
         </h3>
-
+      
         <div class="card shadow-sm mt-4 mb-5">
-          <div
-            class="card-header bg-primary text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-tasks me-2"></i> Resource Allocation Panel
-            <span class="badge bg-light text-dark">Live Staff Assignment</span>
+          <div class="card-header text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-users-cog me-2"></i> Driver Assignment Panel
+            <span class="badge bg-light text-dark">Crew Allocation Engine</span>
           </div>
-
+      
           <div class="card-body">
             <p class="text-muted">
-              View and allocate available personnel and equipment to corridors based on operational need, workload, and
-              availability.
+              Assign drivers based on availability, route familiarity, recent rest periods, and vehicle compatibility.
             </p>
-
+      
             <div class="table-responsive">
               <table class="table table-bordered align-middle">
                 <thead class="table-light text-center">
                   <tr>
-                    <th style="width: 25%;">Task Description</th>
-                    <th style="width: 20%;">Allocate Resource</th>
+                    <th style="width: 25%;">Trip Requirement</th>
+                    <th style="width: 20%;">Select Main Driver</th>
+                    <th style="width: 20%;">Select Assistant Driver</th>
                     <th style="width: 35%;">Notes</th>
                     <th style="width: 20%;">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Extra loading crew at Ermelo Yard</strong></td>
+                    <td><strong>Night haul to Upington</strong></td>
                     <td>
                       <select class="form-select">
-                        <option>Assign Standby Team A</option>
-                        <option>Shift Team B to Ermelo</option>
-                        <option>Request External Support</option>
+                        <option>Driver Fabchi</option>
+                        <option>Driver Samuel</option>
                       </select>
                     </td>
-                    <td><input type="text" class="form-control" placeholder="Urgent due to volume spike"></td>
+
+                    <td>
+                      <select class="form-select">
+                        <option>Driver Fabchi</option>
+                        <option>Driver Samuel</option>
+                      </select>
+                    </td>
+
+
+                    <td><input type="text" class="form-control" placeholder="Preferred for long haul night runs"></td>
                     <td class="text-center">
-                      <button class="btn btn-primary btn-sm"><i class="fas fa-user-plus me-1"></i> Assign</button>
+                      <button class="btn btn-success btn-sm"><i class="fas fa-check-circle me-1"></i> Assign</button>
                     </td>
                   </tr>
-
+      
                   <tr>
-                    <td><strong>Shortage of forklift operators in Durban</strong></td>
+                    <td><strong>New driver orientation for Gauteng route</strong></td>
                     <td>
                       <select class="form-select">
-                        <option>Reallocate from Richards Bay</option>
-                        <option>Bring in Reserves</option>
+                        <option>Driver Christian</option>
+                        <option>Driver Nkadimeng</option>
                       </select>
                     </td>
-                    <td><input type="text" class="form-control" placeholder="Night shift required"></td>
+
+                    <td>
+                      <select class="form-select">
+                        <option>Driver Christian</option>
+                        <option>Driver Nkadimeng</option>
+                      </select>
+                    </td>
+                    <td><input type="text" class="form-control" placeholder="Trainer must be experienced"></td>
                     <td class="text-center">
-                      <button class="btn btn-outline-primary btn-sm"><i class="fas fa-exchange-alt me-1"></i>
-                        Transfer</button>
+                      <button class="btn btn-outline-success btn-sm"><i class="fas fa-user-graduate me-1"></i> Schedule</button>
                     </td>
                   </tr>
-
+      
                   <tr>
-                    <td><strong>Supervisor needed for night dispatch</strong></td>
+                    <td><strong>Relief driver for Port operations</strong></td>
                     <td>
                       <select class="form-select">
-                        <option>Assign Senior Supervisor</option>
-                        <option>Rotate On-Duty Manager</option>
+                        <option>Driver Noluthando</option>
+                        <option>Driver Paris</option>
                       </select>
                     </td>
-                    <td><input type="text" class="form-control" placeholder="Dispatch Point 2 - Port Elizabeth"></td>
+
+                    <td>
+                      <select class="form-select">
+                        <option>Driver Christian</option>
+                        <option>Driver Nkadimeng</option>
+                      </select>
+                    </td>
+                    <td><input type="text" class="form-control" placeholder="8hr shift relief rotation"></td>
                     <td class="text-center">
-                      <button class="btn btn-dark btn-sm"><i class="fas fa-clipboard-check me-1"></i> Allocate</button>
+                      <button class="btn btn-dark btn-sm"><i class="fas fa-user-clock me-1"></i> Dispatch</button>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
+      
             <div class="alert alert-light border mt-4 mb-0 shadow-sm">
               <i class="fas fa-info-circle me-2 text-primary"></i>
-              Resource allocation updates are logged to workflow and synced with BI dashboards for performance tracking.
+              All assignments sync to the mobility dashboard, HR shift logs, and compliance records.
             </div>
           </div>
         </div>
-
+      
         <div class="card shadow-sm mb-4">
-          <div
-            class="card-header bg-primary text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-map-marked-alt me-2"></i> Resource Deployment Map
-            <span class="badge bg-light text-dark">Personnel & Equipment View</span>
+          <div class="card-header text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-map-marked me-2"></i> Driver Deployment Map
+            <span class="badge bg-light text-dark">Driver Positioning</span>
           </div>
-
+      
           <div class="card-body">
-            <p class="text-muted mb-3">Click on any marker to view available personnel or asset details and perform
-              reallocation.</p>
-            <div id="resourceMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;">
-            </div>
+            <p class="text-muted mb-3">Click on markers to view assigned drivers and shift status.</p>
+            <div id="driverMap" style="height: 550px; width: 100%; border: 1px solid #ddd; border-radius: 10px;"></div>
           </div>
         </div>
-
+      
         <div class="card shadow-sm mb-4">
-          <div
-            class="card-header bg-primary text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
-            <i class="fas fa-project-diagram me-2"></i> Resource Allocation Workflow Steps
-            <span class="badge bg-light text-dark">Assignment Protocol</span>
+           <div class="card-header text-white fw-semibold fs-5 d-flex justify-content-between align-items-center">
+            <i class="fas fa-route me-2"></i> Driver Assignment Workflow Steps
+            <span class="badge bg-light text-dark">Automated Assignment Logic</span>
           </div>
-
+      
           <div class="card-body">
-            <p class="text-muted mb-4">Outlined below is the step-by-step resource allocation logic:</p>
-
+            <p class="text-muted mb-4">The system follows this flow to allocate and manage drivers effectively:</p>
+      
             <div class="row g-4">
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-primary shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-primary"><i class="fas fa-database me-1"></i> Demand Detection</h6>
-                    <p class="mb-0 text-muted">System flags under-resourced corridors or operational overload based on
-                      live task inflow.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 border-start border-4 border-info shadow-sm">
-                  <div class="card-body">
-                    <h6 class="fw-bold text-info"><i class="fas fa-user-check me-1"></i> Resource Matching</h6>
-                    <p class="mb-0 text-muted">Available staff/equipment are filtered based on skill, location, and
-                      shift availability.</p>
-                  </div>
-                </div>
-              </div>
-
               <div class="col-md-4">
                 <div class="card h-100 border-start border-4 border-success shadow-sm">
                   <div class="card-body">
-                    <h6 class="fw-bold text-success"><i class="fas fa-random me-1"></i> Smart Reallocation</h6>
-                    <p class="mb-0 text-muted">System suggests optimal reassignments or alerts administrator if manual
-                      action is required.</p>
+                    <h6 class="fw-bold text-success"><i class="fas fa-bell me-1"></i> Trip Trigger</h6>
+                    <p class="mb-0 text-muted">Trip creation or schedule update initiates a search for qualified, rested drivers.</p>
                   </div>
                 </div>
               </div>
-
+      
+              <div class="col-md-4">
+                <div class="card h-100 border-start border-4 border-info shadow-sm">
+                  <div class="card-body">
+                    <h6 class="fw-bold text-info"><i class="fas fa-user-check me-1"></i> Driver Matching</h6>
+                    <p class="mb-0 text-muted">System filters drivers based on qualifications, hours of rest, and region familiarity.</p>
+                  </div>
+                </div>
+              </div>
+      
               <div class="col-md-4">
                 <div class="card h-100 border-start border-4 border-warning shadow-sm">
                   <div class="card-body">
-                    <h6 class="fw-bold text-warning"><i class="fas fa-truck-moving me-1"></i> Reassignment Execution
-                    </h6>
-                    <p class="mb-0 text-muted">Affected teams are notified and GPS tracking is updated to reflect new
-                      deployments.</p>
+                    <h6 class="fw-bold text-warning"><i class="fas fa-route me-1"></i> Assignment Dispatch</h6>
+                    <p class="mb-0 text-muted">Assigned drivers receive push alerts and must confirm readiness.</p>
                   </div>
                 </div>
               </div>
-
+      
               <div class="col-md-4">
                 <div class="card h-100 border-start border-4 border-secondary shadow-sm">
                   <div class="card-body">
-                    <h6 class="fw-bold text-secondary"><i class="fas fa-clipboard-list me-1"></i> Workflow Logging</h6>
-                    <p class="mb-0 text-muted">Every reallocation event is time-stamped and recorded for audit and
-                      training reference.</p>
+                    <h6 class="fw-bold text-secondary"><i class="fas fa-clipboard-list me-1"></i> Shift Logging</h6>
+                    <p class="mb-0 text-muted">Each assignment is logged against HR compliance and shift dashboards.</p>
                   </div>
                 </div>
               </div>
-
+      
+              <div class="col-md-4">
+                <div class="card h-100 border-start border-4 border-primary shadow-sm">
+                  <div class="card-body">
+                    <h6 class="fw-bold text-primary"><i class="fas fa-comments me-1"></i> Feedback & Notes</h6>
+                    <p class="mb-0 text-muted">Driver notes and feedback are captured post-shift to refine future assignments.</p>
+                  </div>
+                </div>
+              </div>
+      
               <div class="col-md-4">
                 <div class="card h-100 border-start border-4 border-dark shadow-sm">
                   <div class="card-body">
-                    <h6 class="fw-bold text-dark"><i class="fas fa-chart-area me-1"></i> Performance Feedback</h6>
-                    <p class="mb-0 text-muted">Post-task evaluations are used to enhance future staff deployment
-                      decisions.</p>
+                    <h6 class="fw-bold text-dark"><i class="fas fa-chart-line me-1"></i> BI Optimization</h6>
+                    <p class="mb-0 text-muted">Driver performance trends are visualized to optimize future allocations.</p>
                   </div>
                 </div>
               </div>
             </div>
-
+      
             <div class="alert alert-light border mt-4 mb-0 shadow-sm">
               <i class="fas fa-info-circle me-2 text-primary"></i>
-              This allocation engine boosts operational efficiency, prevents corridor overload, and promotes smart
-              manpower planning.
+              This assignment module ensures compliance with working hours and improves trip planning accuracy.
             </div>
           </div>
         </div>
       </div>
+      
 
 
 
@@ -404,40 +407,12 @@
 </body>
 
 
-<footer class="bg-dark text-white text-center text-md-start mt-5">
-  <div class="container p-4">
-    <div class="row">
-      <!-- Left column -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Transnet Freight Rail</h5>
-        <p>
-          This dashboard is designed to optimize rail freight operations, ensure efficiency, and track performance
-          across multiple operational areas.
-        </p>
-      </div>
 
-      <!-- Right column -->
-      <div class="col-md-6 mb-4 mb-md-0 text-md-end">
-        <h5 class="text-uppercase">Contact & Support</h5>
-        <ul class="list-unstyled">
-          <li>Email: <a href="mailto:support@transnetfreight.co.za" class="text-white">support@transnetfreight.co.za</a>
-          </li>
-          <li>Phone: +27 11 123 4567</li>
-          <li>Operating Hours: Mon–Fri, 08:00–17:00</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center p-3 bg-secondary">
-    &copy; 2025 Transnet Freight Rail. All rights reserved.
-  </div>
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  const resourceMap = L.map('resourceMap', {
+  const driverMap = L.map('driverMap', {
     center: [-28.4793, 24.6727],
     zoom: 6,
     minZoom: 6,
@@ -445,39 +420,40 @@
     maxBounds: L.latLngBounds(L.latLng(-35.0, 16.0), L.latLng(-22.0, 33.0)),
     maxBoundsViscosity: 1.0
   });
-  
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     noWrap: true
-  }).addTo(resourceMap);
-  
-  const staffAllocations = [
-    { name: "Ermelo Yard", coords: [-26.5333, 29.9833], issue: "Crew Required", color: "primary" },
-    { name: "Durban Terminal", coords: [-29.8587, 31.0218], issue: "Operator Shortage", color: "warning" },
-    { name: "Port Elizabeth", coords: [-33.9608, 25.6022], issue: "Supervisor Needed", color: "info" }
+  }).addTo(driverMap);
+
+  const driverAssignments = [
+    { name: "Upington Station", coords: [-28.456, 21.243], issue: "Night haul", color: "success" },
+    { name: "Gauteng Central", coords: [-26.2041, 28.0473], issue: "Route Orientation", color: "info" },
+    { name: "PE Port", coords: [-33.961, 25.602], issue: "Shift Relief", color: "warning" }
   ];
-  
-  staffAllocations.forEach(loc => {
+
+  driverAssignments.forEach(loc => {
     const icon = L.divIcon({
       className: 'custom-ribbon-icon',
-      html: `<i class="fas fa-user-cog fa-2x text-${loc.color}"></i>`,
+      html: `<i class="fas fa-id-badge fa-2x text-${loc.color}"></i>`,
       iconSize: [24, 36],
       iconAnchor: [12, 36]
     });
-  
-    const marker = L.marker(loc.coords, { icon }).addTo(resourceMap);
+
+    const marker = L.marker(loc.coords, { icon }).addTo(driverMap);
     marker.bindPopup(`
       <div>
         <strong>${loc.name}</strong><br/>
         <span class="text-muted">${loc.issue}</span><br/>
         <span class="badge bg-${loc.color}">${loc.color.toUpperCase()}</span><br/>
-        <button class="btn btn-sm btn-outline-primary mt-2" onclick="alert('Reassignment triggered to ${loc.name}')">
-          Reassign Resource
+        <button class="btn btn-sm btn-outline-success mt-2" onclick="alert('Driver dispatch confirmed for ${loc.name}')">
+          Confirm Assignment
         </button>
       </div>
     `);
   });
-  </script>
+</script>
+
   
 
 
